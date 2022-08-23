@@ -1,28 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/main.css">
-	<title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>User-Interface</title>
 </head>
 <body>
-	<header class="header">
-		<div class="container">
-		</div>
-	</header>
-	
-	<main>
-		<section class="hero"> 
-			<div class="container">
-			</div>
-		</section>        
-	</main>
-	
-	<footer class="footer">
-		<div class="container">
-		</div>
-	</footer>
+    <div class="container posts">
+        <div class="posts__heading-wrapper">
+            <h2 class="posts__heading username">LOL</h2>
+            <button class="posts__heading-btn">Logout</button>
+        </div>
+        <div class="posts__wrapper">
+            <div class="posts__left">
+                <h2 class="posts__left-heading">Posts</h2>
+
+                <ul class="posts__left-list">
+                    <li class="posts__item">
+                        <div class="posts__item-left">
+                            <h3 class="posts__item-title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, veritatis?</h3>
+                            <p class="posts__item-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quod nulla ducimus nihil vero dolore suscipit odio fuga corrupti doloremque, eveniet necessitatibus possimus dolorum laboriosam eos, eum tempora minima quasi!</p>
+                        </div> 
+                        <div class="posts__item-right">
+                            <button class="posts__item-delete">
+                                <img src="./images/trash.svg" alt="" width="16" height="16">
+                                <p class="posts__delete-text">DELETE</p>
+                            </button>
+                            <button class="posts__item-edit">
+                                <img src="./images/pen.svg" alt="" width="16" height="16">
+                                <p class="posts__edit-text">EDIT</p>
+                            </button>
+                            <button class="posts__item-save">
+                                <img src="./images/save.svg" alt="" width="16" height="16">
+                                <p class="posts__save-text">SAVE</p>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="posts__right">
+                <h2 class="posts__right-heading">Saved Posts</h2>
+                <ul class="posts__right-list">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <template id="post__template">
+        <li class="posts__item">
+            <div class="posts__item-left">
+                <h3 class="posts__item-title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, veritatis?</h3>
+                <p class="posts__item-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quod nulla ducimus nihil vero dolore suscipit odio fuga corrupti doloremque, eveniet necessitatibus possimus dolorum laboriosam eos, eum tempora minima quasi!</p>
+            </div> 
+            <div class="posts__item-right">
+                <button class="posts__item-delete">
+                    <img src="./images/trash.svg" alt="" width="16" height="16">
+                    <p class="posts__delete-text">DELETE</p>
+                </button>
+                <button class="posts__item-edit">
+                    <img src="./images/pen.svg" alt="" width="16" height="16">
+                    <p class="posts__edit-text">EDIT</p>
+                </button>
+                <button class="posts__item-save">
+                    <img src="./images/save.svg" alt="" width="16" height="16">
+                    <p class="posts__save-text">SAVE</p>
+                </button>
+            </div>
+        </li>
+    </template>
+    <script src="./js/main.js"></script>
 </body>
 </html>
