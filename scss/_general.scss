@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    // Mirmuhsin
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+ul, ol, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
