@@ -5,12 +5,11 @@ let localSaved = JSON.parse(localStorage.getItem("saved"))
 let saved = []
 if (localSaved) {
     saved = localSaved    
-    console.log(saved);
 }else{
     saved = []
 }
 
-fetch("https://fast-ravine-16741.herokuapp.com/api/posts" , {
+fetch("https://fast-ravine-16741.herokuapp.com/api/users/me" , {
 method: "GET",
 headers: {
     'Content-Type': 'application/json',
@@ -21,6 +20,8 @@ headers: {
 .then(info => {
     if (info.error) {
         window.location.href = "/registration.html"
+    }else{
+        document.querySelector(".username").textContent = info.name
     }
 })
 
@@ -150,4 +151,11 @@ savedWrapper.addEventListener("click" , function (evt) {
             }
         }
     }
+})
+
+let logout = document.querySelector(".logout")
+
+logout.addEventListener("click" , function () {
+    localStorage.removeItem("key")
+    window.location.href = "./registration.html"
 })
