@@ -349,6 +349,10 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -465,6 +469,10 @@ h1, h2, h3, h4, h5, h6, p {
   display: inline-block;
 }
 
+.reg__container {
+  flex-direction: row;
+}
+
 .auth {
   display: flex;
   flex-direction: row;
@@ -548,10 +556,12 @@ h1, h2, h3, h4, h5, h6, p {
 
 .container {
   align-items: stretch;
+}
+
+.posts {
   padding-right: 64px;
   padding-left: 64px;
 }
-
 .posts__heading-wrapper {
   display: flex;
   justify-content: flex-end;
@@ -590,6 +600,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .posts__left {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.31);
+  width: 100%;
 }
 .posts__left-heading {
   font-family: "Roboto";
@@ -598,26 +609,30 @@ h1, h2, h3, h4, h5, h6, p {
   font-size: 16px;
   line-height: 140%;
   color: #344767;
+  width: 100%;
   margin-bottom: 18px;
   margin-top: 23px;
+  margin-left: 5px;
 }
 .posts__left-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 17px;
-}
-.posts__item {
   max-width: 736px;
   width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.posts__item {
   background: #F8F9FA;
   display: flex;
+  justify-content: space-between;
   padding: 28.5px 40px 16.56px 27.56px;
-  margin-left: 16px;
-  margin-right: 16px;
+  width: 100%;
 }
 .posts__item-left {
   margin-right: 80px;
+  width: 100%;
 }
 .posts__item-title {
   font-family: "Roboto";
@@ -634,10 +649,14 @@ h1, h2, h3, h4, h5, h6, p {
   font-size: 12px;
   line-height: 140%;
   color: #7B809A;
+  width: 100%;
 }
 .posts__item-right {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: end;
+  gap: 5px;
+  width: 100%;
 }
 .posts__item-delete {
   border: none;
@@ -696,6 +715,8 @@ h1, h2, h3, h4, h5, h6, p {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.31);
   max-width: 736px;
   width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 .posts__right-heading {
   font-family: "Roboto";
@@ -704,10 +725,111 @@ h1, h2, h3, h4, h5, h6, p {
   font-size: 16px;
   line-height: 140%;
   color: #344767;
+  width: 100%;
+  margin-bottom: 18px;
+  margin-top: 23px;
+  margin-left: 5px;
 }
 .posts__right-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 17px;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  padding: 67px 102px 74px 102px;
+  background: #F5F5F5;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 23px;
+  max-width: 565px;
+  width: 100%;
+}
+.modal__wrapper {
+  display: none;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(217, 217, 217, 0.44);
+}
+.modal__heading {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 31px;
+  line-height: 140%;
+  text-align: center;
+  color: #6A6A6A;
+  margin-bottom: 39px;
+}
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.modal__title {
+  border: 1px solid #C7CCD0;
+  border-radius: 8px;
+  padding: 11px 0 11px 16px;
+  max-width: 361px;
+  width: 100%;
+  outline: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #7B809A;
+}
+.modal__body {
+  border: 1px solid #C7CCD0;
+  border-radius: 8px;
+  padding: 11px 0 11px 16px;
+  max-width: 361px;
+  width: 100%;
+  outline: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #7B809A;
+}
+.modal__buttons-wrapper {
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+}
+.modal__cancel {
+  border: none;
+  background: #D9D9D9;
+  border-radius: 8px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 140%;
+  text-align: center;
+  color: #828282;
+  padding: 7px 18px 6px 19px;
+}
+.modal__save {
+  border: none;
+  background: linear-gradient(180deg, #E93B77 0%, #DA1F63 100%);
+  border-radius: 8px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 140%;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 7px 9.76px 6px 9.24px;
 }/*# sourceMappingURL=main.css.map */

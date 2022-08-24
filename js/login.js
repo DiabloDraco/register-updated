@@ -21,7 +21,7 @@ elForm.addEventListener("submit" , function (evt) {
             }
         )
     })
-    .then(request => request.json)
+    .then(request => request.json())
     .then(data => {
         if (!data.error) {
             localStorage.setItem("key" , data.Authorization)

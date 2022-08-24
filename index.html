@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <title>User-Interface</title>
 </head>
-<body>
+<body class="body">
     <div class="container posts">
         <div class="posts__heading-wrapper">
             <h2 class="posts__heading username">LOL</h2>
@@ -18,32 +18,26 @@
                 <h2 class="posts__left-heading">Posts</h2>
 
                 <ul class="posts__left-list">
-                    <li class="posts__item">
-                        <div class="posts__item-left">
-                            <h3 class="posts__item-title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, veritatis?</h3>
-                            <p class="posts__item-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quod nulla ducimus nihil vero dolore suscipit odio fuga corrupti doloremque, eveniet necessitatibus possimus dolorum laboriosam eos, eum tempora minima quasi!</p>
-                        </div> 
-                        <div class="posts__item-right">
-                            <button class="posts__item-delete">
-                                <img src="./images/trash.svg" alt="" width="16" height="16">
-                                <p class="posts__delete-text">DELETE</p>
-                            </button>
-                            <button class="posts__item-edit">
-                                <img src="./images/pen.svg" alt="" width="16" height="16">
-                                <p class="posts__edit-text">EDIT</p>
-                            </button>
-                            <button class="posts__item-save">
-                                <img src="./images/save.svg" alt="" width="16" height="16">
-                                <p class="posts__save-text">SAVE</p>
-                            </button>
-                        </div>
-                    </li>
+
                 </ul>
             </div>
             <div class="posts__right">
                 <h2 class="posts__right-heading">Saved Posts</h2>
                 <ul class="posts__right-list">
                 </ul>
+            </div>
+        </div>
+        <div class="modal__wrapper">
+            <div class="modal">
+                <h2 class="modal__heading">EDIT POST</h2>
+                <form class="modal__form">
+                    <input class="modal__title" type="text" placeholder="title">
+                    <input class="modal__body" type="text" placeholder="body">
+                    <div class="modal__buttons-wrapper">
+                        <button type="button" class="modal__cancel">Cancel</button>
+                        <button class="modal__save">Save changes</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

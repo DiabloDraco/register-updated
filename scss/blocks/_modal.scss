@@ -1,0 +1,105 @@
+.modal {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    top: 50%;
+    transform: translate(50% ,-50%);
+    padding: 67px 102px 74px 102px;
+    background: #F5F5F5;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+    border-radius: 23px;
+    max-width: 565px;
+    width: 100%;
+    &__wrapper {
+        display: none;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(217, 217, 217, 0.44);
+    }
+    &__heading {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 31px;
+        line-height: 140%;
+        text-align: center;
+        color: #6A6A6A;
+        margin-bottom: 39px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    &__title {
+        border: 1px solid #C7CCD0;
+        border-radius: 8px;
+        padding: 11px 0 11px 16px;
+        max-width: 361px;
+        width: 100%;
+        outline: none;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        color: #7B809A;
+    }
+    
+    &__body {
+        border: 1px solid #C7CCD0;
+        border-radius: 8px;
+        padding: 11px 0 11px 16px;
+        max-width: 361px;
+        width: 100%;
+        outline: none;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        color: #7B809A;
+    }
+    
+    &__buttons-wrapper {
+        display: flex;
+        justify-content: end;
+        gap: 12px;
+    }
+    
+    &__cancel {
+        border: none;
+        background: #D9D9D9;
+        border-radius: 8px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-align: center;
+        color: #828282;
+        padding: 7px 18px 6px 19px;
+    }
+    
+    &__save {
+        border: none;
+        background: linear-gradient(180deg, #E93B77 0%, #DA1F63 100%);
+        border-radius: 8px;        
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 140%;
+        text-align: center;
+        color: #FFFFFF;
+        padding: 7px 9.76px 6px 9.24px;
+    }
+    
+    
+}

@@ -1,9 +1,10 @@
 .container {
     align-items: stretch;
-    padding-right: 64px;
-    padding-left: 64px;
+
 }
 .posts {
+    padding-right: 64px;
+    padding-left: 64px;
     &__heading-wrapper {
         display: flex;
         justify-content: flex-end;
@@ -46,6 +47,7 @@
     
     &__left {
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.31);
+        width: 100%;
     }
     
     &__left-heading {
@@ -55,29 +57,33 @@
         font-size: 16px;
         line-height: 140%;        
         color: #344767;
+        width: 100%;
         margin-bottom: 18px;
         margin-top: 23px;
+        margin-left: 5px;
     }
     
     &__left-list {
         display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 17px;
+        max-width: 736px;
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
     }
     
     &__item {
-        max-width: 736px;
-        width: 100%;
         background: #F8F9FA;
         display: flex;
+        justify-content: space-between;
         padding: 28.5px 40px 16.56px 27.56px;
-        margin-left: 16px;
-        margin-right: 16px;
+        width: 100%;
     }
     
     &__item-left {
         margin-right: 80px;
+        width: 100%;
     }
     
     &__item-title {
@@ -96,11 +102,15 @@
         font-size: 12px;
         line-height: 140%;
         color: #7B809A;
+        width: 100%;
     }
     
     &__item-right {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: end;
+        gap: 5px;
+        width: 100%;
     }
     
     &__item-delete {
@@ -166,6 +176,8 @@
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.31);
         max-width: 736px;
         width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
     }
     
     &__right-heading {
@@ -173,14 +185,17 @@
         font-style: normal;
         font-weight: 700;
         font-size: 16px;
-        line-height: 140%;
+        line-height: 140%;        
         color: #344767;
+        width: 100%;
+        margin-bottom: 18px;
+        margin-top: 23px;
+        margin-left: 5px;
     }
     
     &__right-list {
         display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 17px;
     }
 }
