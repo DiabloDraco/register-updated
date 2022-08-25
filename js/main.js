@@ -168,10 +168,10 @@ if (current.saveId) {
     })) {
     }else{
         saved.push(data)
+        localStorage.setItem("saved" , JSON.stringify(saved))
+        render(saved , savedWrapper)
     }
 })
-localStorage.setItem("saved" , JSON.stringify(saved))
-render(saved , savedWrapper)
 
 
 }
