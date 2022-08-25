@@ -159,3 +159,50 @@ logout.addEventListener("click" , function () {
     localStorage.removeItem("key")
     window.location.href = "./registration.html"
 })
+
+let elPost = document.querySelector(".post__new-post")
+
+elPost.addEventListener("click" , function () {
+    let modal = document.querySelector(".modal__wrapper")
+    document.querySelector(".modal__heading").textContent = "New Post"
+    modal.style.display = "flex"
+    document.querySelector(".body").style.overflowY = "hidden"
+    document.querySelector(".modal__save").style.display = "none"
+    let newPost = document.querySelector(".modal__cancel") 
+    newPost.type = "submit"
+    newPost.textContent = "Post"
+    newPost.style.background = 'linear-gradient(180deg, #E93B77 0%, #DA1F63 100%)'
+    newPost.style.color = "white"
+    
+    let elTitle = document.querySelector(".modal__title")
+    let elBody = document.querySelector(".modal__body")
+    let elForm = document.querySelector(".modal__form")
+    elForm.addEventListener("submit" , function (evt) {
+        evt.preventDefault()
+        
+        let title = elTitle.value
+        let body = elBody.value
+        
+        fetch(`https://fast-ravine-16741.herokuapp.com/api/posts` , {
+        method: "POST",
+        headers:{
+            Authorization: key,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(
+            {
+                "title":title,
+                "body":body
+            }
+            )
+        })
+        modal.style.display = "none"
+        document.querySelector(".body").style.overflowY = "scroll"
+    })
+})
+
+let elRefresh = document.querySelector(".refresh")
+
+elRefresh.addEventListener("click" , function () {
+    window.location.reload()
+})

@@ -567,6 +567,7 @@ button {
   justify-content: flex-end;
   margin-top: 51px;
   margin-bottom: 50px;
+  gap: 20px;
 }
 .posts__heading {
   font-family: "Roboto";
@@ -594,6 +595,11 @@ button {
   border-radius: 8px;
   border: none;
   padding: 11px 74px 12px 73px;
+}
+.posts__heading-btn:hover {
+  background: #FFFFFF;
+  color: #F44334;
+  box-shadow: 0 0 3px 3px #F44334;
 }
 .posts__wrapper {
   display: flex;
@@ -663,6 +669,9 @@ button {
   background: none;
   display: flex;
 }
+.posts__item-delete:hover {
+  text-decoration: underline;
+}
 .posts__delete-text {
   font-family: "Roboto";
   font-style: normal;
@@ -681,6 +690,9 @@ button {
   display: flex;
   align-items: center;
 }
+.posts__item-edit:hover {
+  text-decoration: underline;
+}
 .posts__edit-text {
   font-family: "Roboto";
   font-style: normal;
@@ -698,6 +710,9 @@ button {
   background: none;
   display: flex;
   align-items: center;
+}
+.posts__item-save:hover {
+  text-decoration: underline;
 }
 .posts__save-text {
   font-family: "Roboto";
