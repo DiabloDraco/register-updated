@@ -162,7 +162,14 @@ if (current.saveId) {
     }
 })
 .then(req => req.json())
-.then(data => saved.push(data))
+.then(data => {
+    if (saved.find(function (item) {
+        return item._id == current.saveId 
+    })) {
+    }else{
+        saved.push(data)
+    }
+})
 localStorage.setItem("saved" , JSON.stringify(saved))
 render(saved , savedWrapper)
 
