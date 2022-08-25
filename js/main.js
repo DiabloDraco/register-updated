@@ -2,6 +2,9 @@ let key = localStorage.getItem("key")
 let elWrapper = document.querySelector(".posts__left-list")
 let savedWrapper = document.querySelector(".posts__right-list")
 let localSaved = JSON.parse(localStorage.getItem("saved"))
+let elPagenationWrapper = document.querySelector(".pagenation")
+let elBtnTem = document.querySelector("#pageBtn").content
+
 let saved = []
 if (localSaved) {
     saved = localSaved    
@@ -32,10 +35,20 @@ headers:{
 }
 })
 .then(req => req.json())
-.then(data => render(data.posts , elWrapper))
+.then(data => render(data.posts , elWrapper , data.totalResults))
+
+fetch("https://fast-ravine-16741.herokuapp.com/api/posts", {
+method: "GET",
+headers:{
+    Authorization: key,
+}
+})
+.then(req => req.json())
+.then(data => renderBtn(Math.ceil(data.totalResults / 10) , elPagenationWrapper))
+
 let elTemplate = document.querySelector("#post__template").content
 
-function render(array , wrapper) {
+function render(array , wrapper , total) {
     wrapper.innerHTML = null
     let fragment = document.createDocumentFragment()
     
@@ -59,10 +72,30 @@ function render(array , wrapper) {
             template.querySelector(".posts__item").classList.add(`s${array[i]._id}`)
             template.querySelector(".posts__item-delete").dataset.saveDelId = array[i]._id
             template.querySelector(".posts__delete-text").dataset.saveDelId = array[i]._id
+            template.querySelector(".posts__delete-text").dataset.deleteId = null
             
             template.querySelector(".posts__item-save").remove()
             template.querySelector(".posts__item-edit").remove()
         }
+        fragment.appendChild(template)
+    }
+    wrapper.appendChild(fragment)
+    if (wrapper == elWrapper) {
+        document.querySelector(".posts__left-heading").textContent =   `Posts: ${total}`
+    }
+    if (wrapper == savedWrapper ) {
+        document.querySelector(".posts__right-heading").textContent = `Saved Posts: ${array.length}`
+    }
+}
+function renderBtn(number , wrapper) {
+    wrapper.innerHTML = null
+    let fragment = document.createDocumentFragment() 
+    for (let i = 1; i <= number; i++) {
+        let template = elBtnTem.cloneNode(true)
+        
+        template.querySelector(".pagenation__item").textContent = i
+        template.querySelector(".pagenation__item").dataset.pageId = i
+        
         fragment.appendChild(template)
     }
     wrapper.appendChild(fragment)
@@ -148,6 +181,8 @@ savedWrapper.addEventListener("click" , function (evt) {
                 saved.splice(saved.indexOf(saved[i]) , 1)
                 localStorage.setItem("saved" , JSON.stringify(saved))
                 document.querySelector(`.s${current.saveDelId}`).remove()
+                document.querySelector(".posts__right-heading").textContent = `Saved Posts: ${saved.length}`
+                
             }
         }
     }
@@ -198,11 +233,39 @@ elPost.addEventListener("click" , function () {
         })
         modal.style.display = "none"
         document.querySelector(".body").style.overflowY = "scroll"
+        elTitle.value = null
+        elBody.value = null
+        fetch("https://fast-ravine-16741.herokuapp.com/api/posts", {
+        method: "GET",
+        headers:{
+            Authorization: key,
+        }
     })
+    .then(req => req.json())
+    .then(data => render(data.posts , elWrapper , data.totalResults))
+})
 })
 
 let elRefresh = document.querySelector(".refresh")
 
 elRefresh.addEventListener("click" , function () {
     window.location.reload()
+})
+
+
+elPagenationWrapper.addEventListener("click" , function (evt) {
+    let current = evt.target.dataset.pageId
+    
+    if (current) {
+        
+        fetch(`https://fast-ravine-16741.herokuapp.com/api/posts?page=${current}`, {
+        method: "GET",
+        headers:{
+            Authorization: key,
+        }
+    })
+    .then(req => req.json())
+    .then(data => render(data.posts , elWrapper , data.totalResults))
+    
+}
 })
