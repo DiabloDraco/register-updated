@@ -8,8 +8,13 @@
     &__item {
         cursor: pointer;
         padding: 10px;
-        border: 1px solid #344767;
+        border: 1px solid #F44334;
+        color: #F44334;
         border-radius: 5px;
-        background-color: #f4a7348a;
+        background-color: #FFFFFF;
+        &:hover {
+            background-color: #F44334;
+            color: #FFFFFF;
+        }
     }
 }
