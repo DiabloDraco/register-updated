@@ -89,16 +89,18 @@ function render(array , wrapper , total) {
 }
 function renderBtn(number , wrapper) {
     wrapper.innerHTML = null
-    let fragment = document.createDocumentFragment() 
-    for (let i = 1; i <= number; i++) {
-        let template = elBtnTem.cloneNode(true)
-        
-        template.querySelector(".pagenation__item").textContent = i
-        template.querySelector(".pagenation__item").dataset.pageId = i
-        
-        fragment.appendChild(template)
+    if (number > 1) {
+        let fragment = document.createDocumentFragment() 
+        for (let i = 1; i <= number; i++) {
+            let template = elBtnTem.cloneNode(true)
+            
+            template.querySelector(".pagenation__item").textContent = i
+            template.querySelector(".pagenation__item").dataset.pageId = i
+            
+            fragment.appendChild(template)
+        }
+        wrapper.appendChild(fragment)
     }
-    wrapper.appendChild(fragment)
 }
 render(saved , savedWrapper)
 elWrapper.addEventListener("click" , function (evt) {
@@ -116,7 +118,6 @@ elWrapper.addEventListener("click" , function (evt) {
     currentElement.remove()
 }
 if (current.editId) {
-    let currentElement = document.querySelector(`.id${current.editId}`)
     
     let modal = document.querySelector(".modal__wrapper")
     modal.style.display = "flex"

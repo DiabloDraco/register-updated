@@ -1059,7 +1059,7 @@ button {
     width: 100%;
   }
   .posts__item-left {
-    margin-right: 0px;
+    margin-right: 0;
     width: 100%;
   }
   .posts__item-title {
