@@ -3,6 +3,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100%;
+    width: 100%;
 }
 .registration {
 }
@@ -104,4 +106,146 @@
 
 .reg__container {
     flex-direction: row;
+}
+
+@media only screen and (max-width: 768px) {
+    /* MOBILE */
+
+    .bg {
+        background-image: url("./../../images/register-background.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .registration {
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .form {
+        margin-top: 13%;
+        background: #FFFFFF;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 12px;
+        padding: 45px 25px 28px 22px;
+        position: relative;
+        max-width: 408px;
+        width: 100%;
+        &__heading {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 140%;
+            text-align: center;
+            color: #FFFFFF;
+            &-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                max-width: 420px;
+                width: 100%;
+                padding: 0;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background: linear-gradient(180deg, #E93B77 0%, #DA1F63 100%);
+                box-shadow: 0px 2px 6px rgba(220, 34, 101, 0.36);
+                border-radius: 8px;
+                position: absolute;
+                top: -20px;
+                left: 0;
+            }
+        }
+        
+        &__inner-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 29px;
+        }
+        
+        &__input {
+            max-width: 361px;
+            width: 100%;
+            border: none;
+            padding: 11px 0 11px 16px;
+            border: 1px solid #C7CCD0;
+            border-radius: 8px;
+            &:focus {
+                border: none;
+                outline: none;
+                box-shadow: 0  0 4px 4px #e93b7867;
+            }
+        }
+        
+        &__button {
+            background: linear-gradient(180deg, #E93B77 0%, #DA1F63 100%);
+            border-radius: 8px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 140%;
+            text-align: center;
+            color: #FFFFFF;
+            border: none;
+            padding-top: 11px;
+            padding-bottom: 12px;
+            cursor: pointer;
+            margin-bottom: 41px;
+        }
+    
+        &__text {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+            color: #7B809A;    
+            display: inline-block;
+            &-wrapper {
+                text-align: center;
+            }    
+        }
+    
+        &__link{
+            text-decoration: none;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 140%;
+            color: #E91F63;        
+            display: inline-block;
+        }
+    }
+    
+    .reg__container {
+        flex-direction: row;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    /* MOBILE */
+
+    .form__input {
+        max-width: 300px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        padding: 11px 0 11px 16px;
+        border: 1px solid #C7CCD0;
+        border-radius: 8px;
+        &:focus {
+            border: none;
+            outline: none;
+            box-shadow: 0  0 4px 4px #e93b7867;
+        }
+    }
 }

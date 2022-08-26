@@ -91,3 +91,108 @@
         color: #E91F63;
     }
 }
+
+
+@media only screen and (max-width: 768px) {
+    /* MOBILE */
+
+    .auth {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        &__left {
+            max-width: 800px;
+            width: 100%;
+            background-image: url("./../../images/login-background.png");
+            background-position: top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            top: 0;
+            height: auto;
+            bottom: -200px;
+            position: absolute;
+        }
+        
+        &__right {
+            margin-top: 30px;
+            margin-left: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        &__form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        &__heading-wrapper {
+        }
+        
+        &__heading {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 140%;
+            color: #344767;
+            margin-bottom: 13px;
+        }
+        
+        &__text {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+            color: #7B809A;
+            margin-bottom: 58px;
+        }
+        
+        &__inputs-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        &__mail {
+            margin-bottom: 14px;
+            width: 361px;
+        }
+        
+        &__password {
+            margin-bottom: 73px;
+            width: 361px;
+        }
+        
+        &__bottom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        &__bottom-text {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+            color: #7B809A;
+        }
+        
+        &__bottom-link{
+            margin-left: 3px;
+            text-decoration: none;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 140%;
+            color: #E91F63;
+        }
+    }
+    
+    
+}
