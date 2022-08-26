@@ -619,12 +619,11 @@ button {
   background-repeat: no-repeat;
 }
 .auth__right {
-  margin-top: 115px;
-  margin-left: 219px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  margin-left: 90px;
 }
 .auth__form {
   display: flex;
